@@ -47,7 +47,7 @@ function makeErrorLogger (logger) {
   };
 }
 
-class Logger {
+class LoggerAdapter {
   constructor (name, config) {
     config = config || {};
 
@@ -111,4 +111,4 @@ class Logger {
   }
 }
 
-module.exports = Logger;
+module.exports = LoggerAdapter;
