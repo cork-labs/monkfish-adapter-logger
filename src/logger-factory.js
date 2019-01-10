@@ -2,6 +2,4 @@
 
 const Logger = require('./logger');
 
-module.exports = {
-  Logger
-};
+module.exports = LoggerFactory;
