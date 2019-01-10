@@ -4,16 +4,6 @@ const OutConsole = require('./out-console');
 const OutFile = require('./out-file');
 const OutBunyan = require('./out-bunyan');
 
-const defaults = {
-  name: 'blandoo-server',
-  streams: [],
-  options: {
-    message: false,
-    prettyJson: 0,
-    dump: false
-  }
-};
-
 class Logger {
   constructor (name, streams, data) {
     this._name = name || 'logger';
@@ -22,6 +12,7 @@ class Logger {
   }
 
   _log (level, message, data, dump) {
+    // @todo configurable keys (and which to include)
     const rootData = {
       log_n: this._name,
       log_t: new Date(),
@@ -30,6 +21,7 @@ class Logger {
     };
     const logData = Object.assign(rootData, this._data, data);
     const LEVEL = level.toUpperCase();
+    // @todo configurable format
     message = `> ${logData.log_n} | ${logData.log_t.toUTCString()} | ${LEVEL} | ${message}`;
 
     this._streams.forEach((stream) => {
@@ -77,6 +69,7 @@ class Logger {
 
   flat (prefix = '', data, ret = {}) {
     for (let key in data) {
+      // @todo configurable nesting limit
       if (typeof data[key] === 'object') {
         this.flat(prefix + '_' + key, data[key], ret);
       } else {
@@ -87,12 +80,23 @@ class Logger {
   }
 }
 
+const defaults = {
+  name: 'logger',
+  streams: [],
+  options: {
+    message: false,
+    prettyJson: 0,
+    dump: false
+  }
+};
+
 Logger.createLogger = (config, data) => {
-  const streams = (config.streams || []).map((stream) => {
-    const options = Object.assign({}, config.options, stream.options);
+  let c = Object.assign({}, defaults, config);
+  const streams = (c.streams || []).map((stream) => {
+    const options = Object.assign({}, c.options, stream.options);
     return Logger._createStream(config, stream, options);
   });
-  return new Logger(config.name, streams, data);
+  return new Logger(c.name, streams, data);
 };
 
 Logger._createStream = (config, stream, options) => {

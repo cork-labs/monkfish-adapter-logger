@@ -2,15 +2,26 @@
 
 const bunyan = require('bunyan');
 
-class OutFile {
+const streamDefaults = {
+  bunyan: {}
+};
+
+const optionsDefaults = {
+  message: false,
+  prettyJson: 0,
+  dump: false
+};
+
+class OutBunyan {
   constructor (name, config, options) {
-    this._config = config;
-    this._options = options;
+    this._config = Object.assign({}, streamDefaults, config);
+    this._options = Object.assign({}, optionsDefaults, options);
 
     const opts = Object.assign({ name }, config.bunyan);
     this._bunyan = bunyan.createLogger(opts);
     // https://github.com/trentm/node-bunyan/issues/462
     this._bunyan._emit = (rec, noemit) => {
+      // @todo configurable blacklist/alias
       // delete rec.v;
       // delete rec.msg;
       // delete rec.name;
@@ -29,4 +40,4 @@ class OutFile {
   }
 }
 
-module.exports = OutFile;
+module.exports = OutBunyan;

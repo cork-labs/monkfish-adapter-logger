@@ -2,10 +2,19 @@
 
 const fs = require('fs');
 
+const streamDefaults = {
+  file: null
+};
+
+const optionsDefaults = {
+  message: false,
+  prettyJson: 0,
+  dump: false
+};
 class OutFile {
   constructor (config, options) {
-    this._config = config;
-    this._options = options;
+    this._config = Object.assign({}, streamDefaults, config);
+    this._options = Object.assign({}, optionsDefaults, options);
   }
 
   write (level, message, data, dump) {
