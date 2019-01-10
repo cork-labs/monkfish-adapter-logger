@@ -66,18 +66,6 @@ class Logger {
     }
     this._log('error', message, data, err && err.stack);
   };
-
-  flat (prefix = '', data, ret = {}) {
-    for (let key in data) {
-      // @todo configurable nesting limit
-      if (typeof data[key] === 'object') {
-        this.flat(prefix + '_' + key, data[key], ret);
-      } else {
-        ret[prefix + '_' + key] = data[key];
-      }
-    }
-    return ret;
-  }
 }
 
 const defaults = {
@@ -91,12 +79,12 @@ const defaults = {
 };
 
 Logger.createLogger = (config, data) => {
-  let c = Object.assign({}, defaults, config);
-  const streams = (c.streams || []).map((stream) => {
-    const options = Object.assign({}, c.options, stream.options);
-    return Logger._createStream(config, stream, options);
+  let cfg = Object.assign({}, defaults, config);
+  const streams = (cfg.streams || []).map((stream) => {
+    const options = Object.assign({}, cfg.options, stream.options);
+    return Logger._createStream(cfg, stream, options);
   });
-  return new Logger(c.name, streams, data);
+  return new Logger(cfg.name, streams, data);
 };
 
 Logger._createStream = (config, stream, options) => {
@@ -108,6 +96,18 @@ Logger._createStream = (config, stream, options) => {
     case 'bunyan':
       return new OutBunyan(config.name, stream, options);
   }
+};
+
+Logger.flat = (prefix = '', data, ret = {}) => {
+  for (let key in data) {
+    // @todo configurable nesting limit
+    if (typeof data[key] === 'object') {
+      Logger.flat(prefix + '_' + key, data[key], ret);
+    } else {
+      ret[prefix + '_' + key] = data[key];
+    }
+  }
+  return ret;
 };
 
 module.exports = Logger;
