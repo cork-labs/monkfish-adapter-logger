@@ -17,7 +17,7 @@ describe('Logger', function () {
     describe('out-file (defaults)', function () {
       beforeEach(function () {
         this.config = {
-          name: 'blandoo-server',
+          name: 'my-app',
           streams: [{
             type: 'file',
             file: './log/test.log'
@@ -26,10 +26,19 @@ describe('Logger', function () {
         this.logger = Logger.createLogger(this.config, { baz: 'qux' });
       });
 
-      it('should...', function () {
+      it('should log a debug message', function () {
         this.logger.debug('some debug message', { foo: 'bar' });
+      });
+
+      it('should log an info message', function () {
         this.logger.info('some info message', { foo: 'bar' });
+      });
+
+      it('should log a warning message', function () {
         this.logger.warn('some warn message', { foo: 'bar' });
+      });
+
+      it('should log an error message', function () {
         this.logger.error('some error message', { foo: 'bar' }, new Error('ouch'));
       });
     });
@@ -37,7 +46,7 @@ describe('Logger', function () {
     describe('out-file (extended)', function () {
       beforeEach(function () {
         this.config = {
-          name: 'blandoo-server',
+          name: 'my-app',
           streams: [{
             type: 'file',
             file: './log/test-file.log',
@@ -50,11 +59,19 @@ describe('Logger', function () {
         };
         this.logger = Logger.createLogger(this.config, { baz: 'qux' });
       });
-
-      it('should...', function () {
+      it('should log a debug message', function () {
         this.logger.debug('some debug message', { foo: 'bar' });
+      });
+
+      it('should log an info message', function () {
         this.logger.info('some info message', { foo: 'bar' });
+      });
+
+      it('should log a warning message', function () {
         this.logger.warn('some warn message', { foo: 'bar' });
+      });
+
+      it('should log an error message', function () {
         this.logger.error('some error message', { foo: 'bar' }, new Error('ouch'));
       });
     });
@@ -62,7 +79,7 @@ describe('Logger', function () {
     describe('out-console (defaults)', function () {
       beforeEach(function () {
         this.config = {
-          name: 'blandoo-server',
+          name: 'my-app',
           streams: [{
             type: 'console'
           }]
@@ -70,10 +87,19 @@ describe('Logger', function () {
         this.logger = Logger.createLogger(this.config, { baz: 'qux' });
       });
 
-      it('should...', function () {
+      it('should log a debug message', function () {
         this.logger.debug('some debug message', { foo: 'bar' });
+      });
+
+      it('should log an info message', function () {
         this.logger.info('some info message', { foo: 'bar' });
+      });
+
+      it('should log a warning message', function () {
         this.logger.warn('some warn message', { foo: 'bar' });
+      });
+
+      it('should log an error message', function () {
         this.logger.error('some error message', { foo: 'bar' }, new Error('ouch'));
       });
     });
@@ -81,7 +107,7 @@ describe('Logger', function () {
     describe('out-console (extended)', function () {
       beforeEach(function () {
         this.config = {
-          name: 'blandoo-server',
+          name: 'my-app',
           streams: [{
             type: 'console',
             options: {
@@ -94,10 +120,19 @@ describe('Logger', function () {
         this.logger = Logger.createLogger(this.config, { baz: 'qux' });
       });
 
-      it('should...', function () {
+      it('should log a debug message', function () {
         this.logger.debug('some debug message', { foo: 'bar' });
+      });
+
+      it('should log an info message', function () {
         this.logger.info('some info message', { foo: 'bar' });
+      });
+
+      it('should log a warning message', function () {
         this.logger.warn('some warn message', { foo: 'bar' });
+      });
+
+      it('should log an error message', function () {
         this.logger.error('some error message', { foo: 'bar' }, new Error('ouch'));
       });
     });
@@ -105,7 +140,7 @@ describe('Logger', function () {
     describe('out-bunyan (defaults)', function () {
       beforeEach(function () {
         this.config = {
-          name: 'blandoo-server',
+          name: 'my-app',
           streams: [{
             type: 'bunyan'
           }]
@@ -113,10 +148,19 @@ describe('Logger', function () {
         this.logger = Logger.createLogger(this.config, { baz: 'qux' });
       });
 
-      it('should...', function () {
+      it('should log a debug message', function () {
         this.logger.debug('some debug message', { foo: 'bar' });
+      });
+
+      it('should log an info message', function () {
         this.logger.info('some info message', { foo: 'bar' });
+      });
+
+      it('should log a warning message', function () {
         this.logger.warn('some warn message', { foo: 'bar' });
+      });
+
+      it('should log an error message', function () {
         this.logger.error('some error message', { foo: 'bar' }, new Error('ouch'));
       });
     });
@@ -124,7 +168,7 @@ describe('Logger', function () {
     describe('out-bunyan (extended stderr)', function () {
       beforeEach(function () {
         this.config = {
-          name: 'blandoo-server',
+          name: 'my-app',
           streams: [{
             type: 'bunyan',
             bunyan: {
@@ -143,10 +187,19 @@ describe('Logger', function () {
         this.logger = Logger.createLogger(this.config, { baz: 'qux' });
       });
 
-      it('should...', function () {
+      it('should log a debug message', function () {
         this.logger.debug('some debug message', { foo: 'bar' });
+      });
+
+      it('should log an info message', function () {
         this.logger.info('some info message', { foo: 'bar' });
+      });
+
+      it('should log a warning message', function () {
         this.logger.warn('some warn message', { foo: 'bar' });
+      });
+
+      it('should log an error message', function () {
         this.logger.error('some error message', { foo: 'bar' }, new Error('ouch'));
       });
     });
@@ -154,7 +207,7 @@ describe('Logger', function () {
     describe('out-bunyan (extended file)', function () {
       beforeEach(function () {
         this.config = {
-          name: 'blandoo-server',
+          name: 'my-app',
           streams: [{
             type: 'bunyan',
             bunyan: {
@@ -172,10 +225,19 @@ describe('Logger', function () {
         this.logger = Logger.createLogger(this.config, { baz: 'qux' });
       });
 
-      it('should...', function () {
+      it('should log a debug message', function () {
         this.logger.debug('some debug message', { foo: 'bar' });
+      });
+
+      it('should log an info message', function () {
         this.logger.info('some info message', { foo: 'bar' });
+      });
+
+      it('should log a warning message', function () {
         this.logger.warn('some warn message', { foo: 'bar' });
+      });
+
+      it('should log an error message', function () {
         this.logger.error('some error message', { foo: 'bar' }, new Error('ouch'));
       });
     });

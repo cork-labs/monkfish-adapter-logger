@@ -22,17 +22,15 @@ class OutFile {
     if (message && this._options.message) {
       args.push(message);
     }
-    if (dump && this._options.dump) {
-      data.dump = dump;
-    }
     if (this._options.prettyJson !== false) {
       data = JSON.stringify(data, undefined, this._options.prettyJson);
     }
     args.push(data);
     if (dump && this._options.dump) {
-      args.push(dump);
+      args.push(dump + '\n');
     }
-    fs.writeFileSync(this._config.file, args.join('\n') + '\n', { flag: 'a' });
+    let text = args.join('\n') + '\n';
+    fs.writeFileSync(this._config.file, text, { flag: 'a' });
   }
 }
 

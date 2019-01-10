@@ -15,21 +15,16 @@ class OutConsole {
   }
 
   write (level, message, data, dump) {
-    const args = [];
     if (message && this._options.message) {
-      args.push(message + '\n');
-    }
-    if (dump && this._options.dump) {
-      data.dump = dump;
+      console[level](message);
     }
     if (this._options.prettyJson !== false) {
       data = JSON.stringify(data, undefined, this._options.prettyJson);
     }
-    args.push(data);
+    console[level](data);
     if (dump && this._options.dump) {
-      args.push(dump + '\n');
+      console[level](dump + '\n');
     }
-    console[level](...args);
   }
 }
 

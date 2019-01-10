@@ -28,14 +28,12 @@ class OutBunyan {
       // delete rec.time;
       // delete rec.hostname;
       // delete rec.pid;
+      delete rec.msg;
       bunyan.prototype._emit.call(this._bunyan, rec, noemit);
     };
   }
 
   write (level, message, data, dump) {
-    if (dump && this._options.dump) {
-      data.dump = dump;
-    }
     this._bunyan[level](data);
   }
 }
