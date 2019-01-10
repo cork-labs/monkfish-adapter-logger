@@ -15,9 +15,8 @@ const defaults = {
 };
 
 class Logger {
-  constructor (config, streams, data) {
-    this._config = Object.assign({}, defaults, config);
-    this._name = this._config.name || 'logger';
+  constructor (name, streams, data) {
+    this._name = name || 'logger';
     this._streams = streams;
     this._data = data;
   }
@@ -48,7 +47,7 @@ class Logger {
 
   child (childData = {}) {
     const data = Object.assign({}, this._data, childData);
-    const child = new Logger(this._config, this._streams, data);
+    const child = new Logger(this._name, this._streams, data);
     return child;
   };
 
