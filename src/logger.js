@@ -110,4 +110,6 @@ Logger.flat = (prefix = '', data, ret = {}) => {
   return ret;
 };
 
+Logger.prototype.flat = Logger.flat;
+
 module.exports = Logger;
