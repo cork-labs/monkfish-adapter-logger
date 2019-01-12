@@ -1,13 +1,5 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# compiled output
-/build
-/dist
-/dist-server
-/tmp
-/out-tsc
-/build/Release
-
 # dependencies
 /node_modules
 
@@ -27,25 +19,11 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/lib-cov
-/typings
-
-# e2e
-/e2e/*.js
-/e2e/*.map
-
-# Logs (libpeerconnection, npm-debug, yarn-error, testem)
-logs
+# generated
+/.nyc_output
+coverage/
+/logs
 *.log
-
-# Runtime data
-pids
-*.pid
-*.seed
 
 # System Files
 .DS_Store

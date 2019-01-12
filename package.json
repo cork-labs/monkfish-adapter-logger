@@ -13,7 +13,9 @@
   "scripts": {
     "dev": "_mocha --recursive src/ test/ --watch",
     "lint": "eslint --fix src/ test/",
-    "test": "istanbul cover _mocha -- --recursive test/",
+    "test": "npm run test-u && npm run test-i",
+    "test-u": "nyc _mocha --recursive src/",
+    "test-i": "nyc _mocha --recursive test/",
     "coverage": "http-server coverage/lcov-report/",
     "build": "eslint src/ test/ && npm run test",
     "pub": "git push && npm run build && npm-bump minor"

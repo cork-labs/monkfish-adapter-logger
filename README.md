@@ -167,27 +167,10 @@ npm install -g nodemon http-server
 - `npm run lint` - lint and fix
 - `npm test` - run all test suites and produce code coverage reports
 - `npm run test-u` - run unit tests
-- `npm run test-u` - run integration tests
-- `npm run coverage` - serve test coverage
+- `npm run test-i` - run integration tests
+- `npm run coverage` - serve test coverage reports
 - `npm run build` - lint and test
 - `npm run pub` - publish a patch version (use `npm-bump minor` to publish a minor version)
-
-```shell
-# lint and fix
-npm run lint
-
-# run test suite
-npm test
-
-# lint and test
-npm run build
-
-# serve test coverage
-npm run coverage
-
-# publish a minor version
-node_modules/.bin/npm-bump minor
-```
 
 
 ### Contributing
