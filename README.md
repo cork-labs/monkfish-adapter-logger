@@ -147,7 +147,30 @@ logger.info('article.tags.created', data);
 ```
 
 
-## Develop
+## Development
+
+### Install dependencies
+
+```
+npm install -g nodemon http-server
+```
+
+### Code, test, publish
+
+#### VSCode launchers:
+- `test` - run tests once
+- `./bin/svc` - debug server
+- `./bin/svc (nodemon)` - debug with nodemon (restarts when files saved)
+
+#### NPM scripts:
+- `npm run dev` - run tests (restarts when files saved)
+- `npm run lint` - lint and fix
+- `npm test` - run all test suites and produce code coverage reports
+- `npm run test-u` - run unit tests
+- `npm run test-u` - run integration tests
+- `npm run coverage` - serve test coverage
+- `npm run build` - lint and test
+- `npm run pub` - publish a patch version (use `npm-bump minor` to publish a minor version)
 
 ```shell
 # lint and fix

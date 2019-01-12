@@ -11,11 +11,12 @@
   },
   "main": "src/index.js",
   "scripts": {
-    "dev": "_mocha --recursive test/ --watch",
+    "dev": "_mocha --recursive src/ test/ --watch",
     "lint": "eslint --fix src/ test/",
     "test": "istanbul cover _mocha -- --recursive test/",
+    "coverage": "http-server coverage/lcov-report/",
     "build": "eslint src/ test/ && npm run test",
-    "coverage": "http-server coverage/lcov-report/"
+    "pub": "git push && npm run build && npm-bump minor"
   },
   "dependencies": {
     "bunyan": "^1.8.12"
