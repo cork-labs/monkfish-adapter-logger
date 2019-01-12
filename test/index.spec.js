@@ -7,7 +7,7 @@ chai.use(sinonChai);
 
 const Module = require('../src/index');
 
-describe('monkfish-adapter-logger', function () {
+describe('monkfish-logger', function () {
   it('should be an object', function () {
     expect(Module).to.be.a('object');
   });

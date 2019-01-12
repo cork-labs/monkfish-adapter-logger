@@ -6,7 +6,7 @@
 ## Getting Started
 
 ```shell
-npm install --save @cork-labs/monkfish @cork-labs/monkfish-adapter-logger
+npm install --save @cork-labs/monkfish @cork-labs/monkfish-logger
 ```
 
 Wraps [bunyan]() logger library to facilitate injection, testing and configuration of logs.

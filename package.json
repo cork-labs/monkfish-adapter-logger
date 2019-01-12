@@ -1,13 +1,13 @@
 {
-  "name": "@cork-labs/monkfish-adapter-logger",
+  "name": "@cork-labs/monkfish-logger",
   "version": "0.3.1-pre",
   "description": "Logger adapter for Node.js framework Monkfish",
   "license": "MIT",
-  "homepage": "https://github.com/cork-labs/monkfish-adapter-logger",
+  "homepage": "https://github.com/cork-labs/monkfish-logger",
   "author": "Andre Torgal <andre.torgal@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cork-labs/monkfish-adapter-logger.git"
+    "url": "https://github.com/cork-labs/monkfish-logger.git"
   },
   "main": "src/index.js",
   "scripts": {
