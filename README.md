@@ -18,7 +18,7 @@ See [Monkfish](https://github.comn/cork-labs/monkfish) for more information.
 
 ### Logger
 
-#### `Logger.createLogger(config, data)`
+#### `Logger.createLogger(config, data) : Logger`
 
 Creates an instance of Logger from configuration.
 
@@ -61,7 +61,13 @@ Example config:
 }
 ```
 
-#### `new Logger(name, streams): void`
+#### `Logger.flat(prefix, obj, ret): object`
+
+Flattens the object for logging, use on data objects before you log them to keep them flat.
+
+Also accessible as instance method `logger.flat()`, see below for spec and examples.
+
+#### `new Logger(name, streams)`
 
 Creates an instance of Logger with the pre-configured stream instances.
 
@@ -117,7 +123,7 @@ If error is a subclass of Error, only the following key/values are added to the 
 
 Otherwise, it is directly logged under the `err` key.
 
-#### `logger.flat(prefix, obj): object`
+#### `logger.flat(prefix, data, ret): object`
 
 Flattens the object for logging, use on data objects before you log them to keep them flat.
 
