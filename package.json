@@ -1,6 +1,6 @@
 {
   "name": "@cork-labs/monkfish-logger",
-  "version": "0.5.0",
+  "version": "0.5.1-pre",
   "description": "Logger adapter for Node.js framework Monkfish",
   "license": "MIT",
   "homepage": "https://github.com/cork-labs/monkfish-logger",
