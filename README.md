@@ -3,15 +3,16 @@
 > Logger adapter for Node.js framework Monkfish.
 
 
+Wraps [bunyan](https://github.com/trentm/node-bunyan) logger library to facilitate injection, testing and configuration of logs.
+
+See [Monkfish](https://github.comn/cork-labs/monkfish) for more information.
+
+
 ## Getting Started
 
 ```shell
-npm install --save @cork-labs/monkfish @cork-labs/monkfish-logger
+npm install --save @cork-labs/monkfish-logger
 ```
-
-Wraps [bunyan]() logger library to facilitate injection, testing and configuration of logs.
-
-See [Monkfish](https://github.comn/cork-labs/monkfish) for more information.
 
 
 ## API
@@ -159,16 +160,16 @@ npm install -g nodemon http-server
 
 #### VSCode launchers:
 - `test` - run tests once
-- `./bin/svc` - debug server
-- `./bin/svc (nodemon)` - debug with nodemon (restarts when files saved)
 
 #### NPM scripts:
 - `npm run dev` - run tests (restarts when files saved)
-- `npm run lint` - lint and fix
+- `npm run lint` - lint
+- `npm run lint-fix` - lint and fix
 - `npm test` - run all test suites and produce code coverage reports
 - `npm run test-u` - run unit tests
 - `npm run test-i` - run integration tests
 - `npm run coverage` - serve test coverage reports
+- `npm run clean` - delete all build artifacts
 - `npm run build` - lint and test
 - `npm run pub` - publish a patch version (use `npm-bump minor` to publish a minor version)
 
@@ -182,12 +183,16 @@ Check [CONTRIBUTING](https://github.com/cork-labs/contributing/blob/master/CONTR
 
 ## Links
 
-- [npm-bump](https://www.npmjs.com/package/npm-bump)
-- [chai](http://chaijs.com/api/)
+- [bunyan](https://github.com/trentm/node-bunyan)
+- [ts-node](https://www.npmjs.com/package/ts-node)
+- [nyc](https://github.com/istanbuljs/nyc)
+- [mocha](https://github.com/mochajs/mocha)
+- [chai](https://github.com/chaijs/chai)
 - [sinon](http://sinonjs.org/)
 - [sinon-chai](https://github.com/domenic/sinon-chai)
+- [npm-bump](https://www.npmjs.com/package/npm-bump)
 
 
 ## [MIT License](LICENSE)
 
-[Copyright (c) 2018 Cork Labs](http://cork-labs.mit-license.org/2018)
+[Copyright (c) 2019 Cork Labs](http://cork-labs.mit-license.org/2019)
