@@ -1,0 +1,1 @@
+{"version":3,"file":"logger-stream.d.ts","sourceRoot":"","sources":["../../src/interfaces/logger-stream.ts"],"names":[],"mappings":"AACA,MAAM,WAAW,aAAa;IAC5B,KAAK,CAAE,KAAK,EAAE,MAAM,EAAE,OAAO,EAAE,MAAM,EAAE,IAAI,EAAE,GAAG,EAAE,IAAI,EAAE,GAAG,GAAG,IAAI,CAAC;CACpE"}
