@@ -1,3 +1,4 @@
+import { ILogger } from './interfaces/logger';
 import { ILoggerConfig } from './interfaces/logger-config';
 import { ILoggerStream } from './interfaces/logger-stream';
 import { ILoggerStreamDefinition } from './interfaces/logger-stream-definition';
@@ -16,7 +17,7 @@ const defaults: ILoggerConfig = {
   }
 };
 
-class Logger {
+class Logger implements ILogger {
 
   public static create = (config: ILoggerConfig, data: any = {}) => {
     const cfg = Object.assign({}, defaults, config);

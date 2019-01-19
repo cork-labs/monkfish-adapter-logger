@@ -21,7 +21,7 @@ chai.use(sinon_chai_1.default);
 chai.use(chai_as_promised_1.default);
 chai.use(sinon_chai_1.default);
 describe('monkfish-logger', function t() {
-    it('should expose the expected units', function t() {
+    it('should export the expected symbols', function t() {
         expect(index_1.Logger).to.be.a('function');
         expect(index_1.StreamConsole).to.be.a('function');
         expect(index_1.StreamFile).to.be.a('function');

@@ -1,6 +1,7 @@
+import { ILogger } from './interfaces/logger';
 import { ILoggerConfig } from './interfaces/logger-config';
 import { ILoggerStream } from './interfaces/logger-stream';
-declare class Logger {
+declare class Logger implements ILogger {
     static create: (config: ILoggerConfig, data?: any) => Logger;
     static flat: (prefix: string | undefined, data: any, ret?: any) => any;
     private static createStream;

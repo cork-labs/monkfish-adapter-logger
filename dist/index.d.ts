@@ -1,3 +1,4 @@
+export { ILogger } from './interfaces/logger';
 export { ILoggerConfig } from './interfaces/logger-config';
 export { ILoggerStream } from './interfaces/logger-stream';
 export { ILoggerStreamDefinition } from './interfaces/logger-stream-definition';

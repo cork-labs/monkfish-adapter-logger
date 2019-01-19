@@ -12,7 +12,7 @@ chai.use(chaiAsPromised);
 chai.use(sinonChai);
 
 describe('monkfish-logger', function t () {
-  it('should expose the expected units', function t () {
+  it('should export the expected symbols', function t () {
     expect(Logger).to.be.a('function');
     expect(StreamConsole).to.be.a('function');
     expect(StreamFile).to.be.a('function');
