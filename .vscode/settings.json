@@ -8,17 +8,19 @@
   "files.exclude": {
     "**/.git": true,
     "**/.nyc_output": true,
-    "**/build": true,
     "**/coverage": true,
-    "**/dist": true,
-    "**/log": true,
-    "**/node_modules": true
+    "**/logs": true,
+    "**/node_modules": true,
+    "**/dist": true
   },
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "search.exclude": {},
   "eslint.run": "onSave",
   "eslint.autoFixOnSave": true,
+  "tslint.enable": true,
+  "tslint.autoFixOnSave": true,
+  "tslint.ignoreDefinitionFiles": true,
+  "tslint.alwaysShowStatus": true,
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#eb7202"
   }

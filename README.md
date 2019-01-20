@@ -19,7 +19,7 @@ npm install --save @cork-labs/monkfish-logger
 
 ### Logger
 
-#### `Logger.createLogger(config, data) : Logger`
+#### `Logger.createLogger(config, data): Logger`
 
 Creates an instance of Logger from configuration.
 

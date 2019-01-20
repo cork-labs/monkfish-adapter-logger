@@ -1,3 +1,4 @@
+export { LoggerLevel } from './types/logger-level';
 export { ILogger } from './interfaces/logger';
 export { ILoggerConfig } from './interfaces/logger-config';
 export { ILoggerStream } from './interfaces/logger-stream';

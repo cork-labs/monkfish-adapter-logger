@@ -10,11 +10,12 @@ declare class Logger implements ILogger {
     private data;
     constructor(name: string, streams: ILoggerStream[], data: any);
     set(key: string, value: any): void;
-    child(childData?: any): Logger;
+    child(childData?: any): ILogger;
     debug(message: string, data?: any): void;
     info(message: string, data?: any): void;
     warn(message: string, data?: any): void;
     error(message: string, data?: any, err?: any): void;
+    flat(prefix: string | undefined, data: any, ret?: any): any;
     private log;
 }
 export { Logger };

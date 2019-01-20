@@ -16,6 +16,6 @@
         "${workspaceFolder}/test/**/*.spec.*"
       ],
       "internalConsoleOptions": "openOnSessionStart"
-    },
+    }
   ]
 }

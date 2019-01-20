@@ -64,6 +64,9 @@ class Logger {
         }
         this.log('error', message, logData, err && err.stack);
     }
+    flat(prefix = '', data, ret = {}) {
+        return Logger.flat(prefix, data, ret);
+    }
     log(level, message, data, dump) {
         // @todo configurable keys (and which to include)
         const rootData = {

@@ -67,7 +67,7 @@ class Logger implements ILogger {
     this.data = data;
   }
 
-  public set (key: string, value: any) {
+  public set (key: string, value: any): void {
     if (typeof value !== 'undefined') {
       this.data[key] = value;
     } else {
@@ -75,25 +75,25 @@ class Logger implements ILogger {
     }
   }
 
-  public child (childData: any = {}) {
+  public child (childData: any = {}): ILogger {
     const data = Object.assign({}, this.data, childData);
     const child = new Logger(this.name, this.streams, data);
     return child;
   }
 
-  public debug (message: string, data?: any) {
+  public debug (message: string, data?: any): void {
     this.log('debug', message, data);
   }
 
-  public info (message: string, data?: any) {
+  public info (message: string, data?: any): void {
     this.log('info', message, data);
   }
 
-  public warn (message: string, data?: any) {
+  public warn (message: string, data?: any): void {
     this.log('warn', message, data);
   }
 
-  public error (message: string, data?: any, err?: any) {
+  public error (message: string, data?: any, err?: any): void {
     const logData: any = data || {};
     if (err && err.constructor) {
       logData.errname = err.constructor.name;
@@ -105,7 +105,11 @@ class Logger implements ILogger {
     this.log('error', message, logData, err && err.stack);
   }
 
-  private log (level: string, message: string, data: any, dump?: any) {
+  public flat (prefix: string = '', data: any, ret: any = {}): any {
+    return Logger.flat(prefix, data, ret);
+  }
+
+  private log (level: string, message: string, data: any, dump?: any): void {
     // @todo configurable keys (and which to include)
     const rootData = {
       log_n: this.name,
